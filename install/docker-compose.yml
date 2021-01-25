@@ -1,0 +1,17 @@
+version: '3.8'
+volumes:
+  postgres_data:
+
+services:
+  db:
+    image: postgres:11.2-alpine
+    volumes:
+      - postgres_data:/var/lib/postgres/data/
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    container_name: gepardec-postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: dbpw
+      POSTGRES_DB: gepardec
+    ports: #make db accessible locally
+      - "5432:5432"
