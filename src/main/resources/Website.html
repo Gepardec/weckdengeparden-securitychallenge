@@ -1,0 +1,49 @@
+<html>
+<head>
+    <title>Login page</title>
+</head>
+<body>
+<form>
+    <label for="pswd">Enter your password: </label>
+	<input type="password" id="pswd"/>
+	<input type="submit" value="login" onclick="checkPswd(); return false;" />
+</form>
+
+<script type="text/javascript">
+  function checkPswd() {
+    var passw = document.getElementById("pswd").value;
+	
+    if (passw.substring(0, 4) == '234k')
+	{
+		if (passw.substring(4*6, 4*7) == 'fda_')
+		{	
+			if (passw.substring(4, 4*2) == 'ng_3')
+			{
+				if (passw.substring(4*4, 4*5) == 'k2n_')
+				{
+					if (passw.substring(4*3, 4*4) == 'a_32') 
+					{
+						if (passw.substring(4*5, 4*6) == 'safj')
+						{
+							if (passw.substring(4*2, 4*3) == '234n')
+							{
+								if (passw.substring(4*7, 4*8) == 'hgfd')
+								{
+									alert("Glückwunsch das ist das korrekte Passwort ;)")
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+    }
+    else
+	{
+      alert("Falsches Passwort :(");
+    }
+    
+  }
+</script>
+</body>
+</html>
