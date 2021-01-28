@@ -1,0 +1,39 @@
+image::https://raw.githubusercontent.com/Gepardec/weckdengeparden/master/weckdengepardenindir.jpg[Sujet]
+
+*Bewirb dich!*
+
+Lieber zukünftiger Developer-Gepard!
+Es freut uns, dass du dich für unsere Securitychallenge entschieden hast.
+
+Hier warten einige Rätsel und Herausforderungen auf dich. Wir sind aber sicher, dass du alle meistern wirst!
+
+Bitte clone einfach das Repo und dann kannst du schon loslegen!
+Deine erste Herausforderung findest du unter resources/Website.html!
+====
+---
+
+*SET-UP*
+
+Für unsere Datenbank ist die Installation von Docker notwendig.
+Du hast Docker noch nicht? Bitte hier downloaden:
+https://www.docker.com/get-started
+
+Dann musst du im Directory install nur mehr folgenden Befehl aufrufen:
+
+`docker-compose up -d`
+
+Solltest du Probleme haben, check unsere link:https://github.com/Gepardec/weckdengeparden/wiki/Home[Support] Seite.
+
+====
+---
+
+*Viel Spaß!*
+
+PS: Solltest du nicht alle Aufgaben lösen können - kein Problem!
+Du kannst dich jederzeit mithilfe des Abgabeformular.jar bewerben ;-)
+
+Wichtig für uns: Was kann dein Beitrag zur Umsetzung der link:https://www.gepardec.com/arbeit-kultur/werte-und-kultur/[Vision] von Gepardec sein?
+Bitte beantworte das in der "messageToGepardec".
+
+
+LG, *Michael*

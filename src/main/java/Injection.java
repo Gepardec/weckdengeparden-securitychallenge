@@ -1,11 +1,13 @@
 import java.sql.*;
 
-public class Injection {
+/*SET UP
 
-    /*TO DO
-     * 1) Installation Docker
-     * 2) docker-init.cmd aufrufen
-     * */
+* 1) Docker installieren: https://www.docker.com/get-started
+* 2) docker-compose up -d im Directory install aufrufen
+*
+* */
+
+public class Injection {
 
     public static void main(String[] args) {
 
@@ -23,16 +25,17 @@ public class Injection {
          * SQL INJECTION
          *
          * Kannst du mithilfe einer SQL INJECTION alle Daten abfragen ohne die Zugangsdaten zu kennen? :)
+         * Wir würden die Daten nämlich für den PasswortValidator brauchen.
          *
          * */
 
-        // So würde ein korrekter Zugriff ausschauen
+        // So würde wohl ein korrekter Loginprozess ausschauen
         String username = "Philipp";
         String password = "helloWorld";
         String query = "SELECT * FROM useraccess where username=? and password = ?";
 
         PreparedStatement stmt = null;
-        boolean success =false;
+
         try {
             stmt = con.prepareStatement(query);
             stmt.setString(1, username);
@@ -42,7 +45,6 @@ public class Injection {
             System.out.println("Login erfolgreich!");
 
             while (rs.next()) {
-                success = true;
                 String user = rs.getString("username");
                 String word = rs.getString("password");
                 String salary = rs.getString("salary");

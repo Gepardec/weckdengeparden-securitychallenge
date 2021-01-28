@@ -1,7 +1,7 @@
 import org.junit.Test;
 import org.junit.Assert;
 
-public class TestMain {
+public class TestHashValidator {
 
     @Test
     public void musterTest() {
