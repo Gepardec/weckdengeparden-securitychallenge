@@ -7,16 +7,19 @@
      *
      *  */
 
-class CaesarEntschluesseln {
+    import java.util.ArrayList;
+
+    class CaesarEntschluesseln {
 
 
-    static String range = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+    static String range = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
 
     public static void main(String[] args) {
 
-        // Bitte hier dein Passwort, welches du bei der HTML-Website herausgefunden hast, einfügen.
-        String code = "QbanHqnzCsFpuvssnuEGFtrFryyFpunsGFxnCvGnrA";
+        // Bitte hier dein Passwort, welches du bei der Reverse "Engineering Challenge" herausgefunden hast, einfügen.
+        String code = "";
+        code = code.replaceAll("[0-9]","");
 
         System.out.println("Alle möglichen Verschiebungen von " + code + ":\n");
         entschluesseln(code);

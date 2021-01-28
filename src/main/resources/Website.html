@@ -13,23 +13,23 @@
   function checkPswd() {
     var passw = document.getElementById("pswd").value;
 	
-    if (passw.substring(0, 4) == '234k')
+    if (passw.substring(0, 4) == '0x50')
 	{
-		if (passw.substring(4*6, 4*7) == 'fda_')
+		if (passw.substring(2*9, 4*5+2) == '0x6d')
 		{	
-			if (passw.substring(4, 4*2) == 'ng_3')
+			if (passw.substring(4, 4+1) == 'n')
 			{
-				if (passw.substring(4*4, 4*5) == 'k2n_')
+				if (passw.substring(4*3+1, 4*4+1) == '0x41')
 				{
-					if (passw.substring(4*3, 4*4) == 'a_32') 
+					if (passw.substring(9, 4*3+1) == '0x6a') 
 					{
-						if (passw.substring(4*5, 4*6) == 'safj')
+						if (passw.substring(4*4+1, 2*9) == '7')
 						{
-							if (passw.substring(4*2, 4*3) == '234n')
+							if (passw.substring(4+1, 9) == '0x79')
 							{
-								if (passw.substring(4*7, 4*8) == 'hgfd')
+								if (passw.substring(4*5+2, 4*5+3) == '9')
 								{
-									alert("Glückwunsch das ist das korrekte Passwort ;)")
+									alert("Glückwunsch das ist das korrekte Passwort ;)\nDu hast diese Challenge geschafft.\nDas Passwort benötigst du für die \"Reverse Engineering\" Challenge.\nPasswort: "+passw)
 								}
 							}
 						}

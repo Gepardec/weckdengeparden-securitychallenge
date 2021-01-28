@@ -1,16 +1,26 @@
+/* Finde das Passwort dieser Challenge heraus.
+ * Du kannst natürlich den Code nach belieben ändern.
+ * Bevor du mit der Challenge beginnst, musst du das Passwort der Website Challenge in die "passwd" Variable einfügen und den generierten Code in die "encoded" variable.
+ * */
+
 import java.util.Scanner;
 
 public class ReverseEngineering {
     public static void main(String args[])
     {
         String input;
-        System.out.print("Password:");
+        String passwd = "0x50n0x790x6a0x4170x6d9"; //Bitte hier das Passwort der Website einfügen und das Programm ausführen.
+        //0x50n0x790x6a0x4170x6d9
+
+        System.out.println("Bitte kopiere folgenden Code in die Klammern der encoded Variable, dann kannst du auch schon loslegen:\n"+passwd.substring(0,4)+", '"+passwd.substring(4,5)+"', "+passwd.substring(5,9)+", "+passwd.substring(9,13)+", "+passwd.substring(13,17)+", '"+passwd.substring(17,18)+"', "+passwd.substring(18,22)+", '"+passwd.substring(22,23)+"'");
+        System.out.println("Password:");
         Scanner scanner = new Scanner(System.in);
         input = scanner.next();
 
         if(inputCheck(input))
         {
-            System.out.println("Glückwunsch das war das korrekte Passwort ;)");
+            System.out.println("\nGlückwunsch das war das korrekte Passwort ;)");
+            System.out.println("Du hast diese Challenge geschafft.\nDas Passwort benötigst du für die Caesar Entschlüsselung");
         }else
         {
             System.out.println("Das Passwort war nicht korrekt.");
@@ -20,18 +30,17 @@ public class ReverseEngineering {
     public static boolean inputCheck(String input)
     {
         byte[] encoded = {
-                'd', 0x30 , 0x27  , 0142 , 0x55  , 077  , 0123  , 0x5f  ,
-                0154, 'l', 0x32, 0x25, 0x52, '5', 0x61, 0x3f,
-                055, 0124, 'l', 063 , 066, 044, 'h'
+                // Füge hier das konvertierte Passwort von der Konsolenausgabe ein. (Achtung bitte exakt eingeben, auch die Hochkomma und die Beistriche)
+               // 0x50, 'n' , 0x79  , 0x6a , 0x41  , '7'  , 0x6d , '9'
         };
 
         for (int i=0; i<encoded.length; i++)
         {
-            if (encoded[i] != encoded[i])
+            if (input.getBytes()[i] != encoded[i])
             {
                 return false;
             }
-            System.out.print((char)encoded[i]);
+            //System.out.print((char)encoded[i]);
         }
         return true;
     }
