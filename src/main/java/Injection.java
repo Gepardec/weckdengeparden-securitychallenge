@@ -13,8 +13,9 @@ public class Injection {
 
         Connection con=null;
         // Verbindung zum PostgreSQL Server herstellen
+        // Hier bräuchten wir noch das Passwort, dass du bei der Caesarverschlüsselung herausgefunden hast :)
         try {
-            con=DriverManager.getConnection("jdbc:postgresql://localhost:5432/gepardec","postgres","dbpw");
+            con=DriverManager.getConnection("jdbc:postgresql://localhost:5432/gepardec","postgres","");
             System.out.println("Connected to the PostgreSQL server successfully.");
         }catch (Exception e){
             System.out.println("Failed to connect!");
