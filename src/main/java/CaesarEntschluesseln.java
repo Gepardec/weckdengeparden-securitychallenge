@@ -27,8 +27,29 @@
 
     public static String entschluesseln(String text)
     {
-        String loesungswort = text +  "      WHAAAAAT? bitte übersetzen!!";
-        System.out.println(loesungswort);
-        return loesungswort;
+        String ausgabe = "";
+        int index = 0;
+        int verschiebung = 0;
+        ArrayList<String> ausgabeArray = new ArrayList<String>();
+
+        for(int i = 0; i < 26; i++)
+        {
+            for(int j = 0; j < text.length(); j++)
+            {
+                index = range.indexOf(text.charAt(j));
+                if((index + i) > 25)
+                {
+                    verschiebung = index + i - 26;
+                } else {
+                    verschiebung = index + i;
+                }
+                ausgabe = ausgabe.concat(String.valueOf(range.charAt(verschiebung)));
+
+            }
+            ausgabeArray.add(ausgabe);
+            System.out.println(ausgabeArray.get(i) + "\n");
+            ausgabe = "";
+        }
+        return ausgabeArray.toString();
     }
 }

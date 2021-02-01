@@ -6,7 +6,7 @@ public class HashValidator {
     public static void main(String[] args) {
 
         // Hier bitte das Passwort vom PasswordValidator einfügen :)
-        String toHash = "";
+        String toHash = "W#2FfkaeiE";
 
        String überprüfen = HashGenerator.getHash(toHash).toString();
 

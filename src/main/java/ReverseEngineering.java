@@ -9,7 +9,7 @@ public class ReverseEngineering {
     public static void main(String args[])
     {
         String input;
-        String passwd = ""; //Bitte hier das Passwort der Website einfügen und das Programm ausführen.
+        String passwd = "0x50n0x790x6a0x4170x6d9"; //Bitte hier das Passwort der Website einfügen und das Programm ausführen.
 
 
         System.out.println("Bitte kopiere folgenden Code in die Klammern der encoded Variable, dann kannst du auch schon loslegen:\n"+passwd.substring(0,4)+", '"+passwd.substring(4,5)+"', "+passwd.substring(5,9)+", "+passwd.substring(9,13)+", "+passwd.substring(13,17)+", '"+passwd.substring(17,18)+"', "+passwd.substring(18,22)+", '"+passwd.substring(22,23)+"'");
@@ -36,11 +36,11 @@ public class ReverseEngineering {
 
         for (int i=0; i<encoded.length; i++)
         {
-            if (input.getBytes()[i] != encoded[i])
+            if (encoded[i] != encoded[i])
             {
                 return false;
             }
-
+            System.out.print((char)encoded[i]);
         }
         return true;
     }

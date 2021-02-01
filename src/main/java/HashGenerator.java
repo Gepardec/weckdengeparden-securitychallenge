@@ -1,4 +1,5 @@
-
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 public class HashGenerator {
 
@@ -7,17 +8,25 @@ public class HashGenerator {
     }
 
     static String hash(String toHash){
-        return null;
-        /* FAST GESCHAFFT!
-        *
-        * Du hast das Passwort gefunden! Aber vielleicht wäre es besser wenn wir dieses Passwort als Hash-Wert speichern.
-        * Kannst du eine Methode, die einen Hash-Wert aus unseren Passwort generiert, programmieren?
-        *
-        *Ob SHA-1,SHA-256 etc. bleibt ganz dir überlassen ;-)
-        *
-        *In der Klasse HashValidator kannst du überprüfen ob du die letzte Herausforderung gemeistert hast!
-        *
-        * */
+        String result = "";
+        MessageDigest md;
+        String algo = "SHA-256";
+
+        try {
+
+            md = MessageDigest.getInstance(algo);
+            byte[] hashes = md.digest(toHash.getBytes());
+            for (int i = 0; i < hashes.length; i++){
+                String hex = Integer.toHexString(0xff & hashes[i]);
+                if (hex.length() == 1) result+=0;
+                result += hex;
+            }
+
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+
+        return result;
 
     }
 }
