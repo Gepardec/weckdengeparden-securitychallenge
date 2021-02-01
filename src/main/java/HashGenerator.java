@@ -1,5 +1,4 @@
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
+
 
 public class HashGenerator {
 
@@ -11,8 +10,8 @@ public class HashGenerator {
         return null;
         /* FAST GESCHAFFT!
         *
-        * Du hast das Passwort gefunden! Aber vielleicht wäre es besser wenn wir dieses Passwort verschlüsseln.
-        * Kannst du eine Methode, die unser Passwort in einen Hash verwandel, programmieren?
+        * Du hast das Passwort gefunden! Aber vielleicht wäre es besser wenn wir dieses Passwort als Hash-Wert speichern.
+        * Kannst du eine Methode, die einen Hash-Wert aus unseren Passwort generiert, programmieren?
         *
         *Ob SHA-1,SHA-256 etc. bleibt ganz dir überlassen ;-)
         *

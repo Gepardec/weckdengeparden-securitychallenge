@@ -14,7 +14,7 @@ public class HashValidator {
             System.out.println("Gratuliere! \nDu hast den Geparden in dir geweckt und alle Herausforderungen gemeistert!" +
                     "\nJetzt bitte nur noch einen GitHub-Pullrequest erstellen und deine Bewerbung mittels /resources/Abgabeformular.jar abschicken!");
         } else {
-            System.out.println("Hmm. Da dürfte entweder beim Passwort oder beim Hashgenerator etwas noch nicht passen!");
+            System.out.println("Hmm. Da dürfte entweder beim Passwort oder beim HashGenerator etwas noch nicht passen!");
         }
 
     }

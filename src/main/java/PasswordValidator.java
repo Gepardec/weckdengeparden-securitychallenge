@@ -1,5 +1,5 @@
    /*
-    * Wie du gesehen hast entsprechen die Passwörter in der Datenbank keinen Richtlinien.
+    * Wie du gesehen hast entsprechen die Passwörter in der Datenbank keinerlei Richtlinien.
     * Kannst du uns helfen einen Validator zu schreiben der Passwörter auf folgende Eigenschaften prüft?
     *
     * Minimale Länge: 5

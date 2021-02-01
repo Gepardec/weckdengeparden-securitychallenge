@@ -12,12 +12,12 @@
     class CaesarEntschluesseln {
 
 
-    static String range = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    static String range = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
 
     public static void main(String[] args) {
 
-        // Bitte hier dein Passwort, welches du bei der Reverse "Engineering Challenge" herausgefunden hast, einfügen.
+        // Bitte hier dein Passwort, welches du bei der Reverse Engineering Challenge herausgefunden hast, einfügen.
         String code = "";
         code = code.replaceAll("[0-9]","");
 
