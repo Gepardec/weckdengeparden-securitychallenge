@@ -1,23 +1,24 @@
 import java.sql.*;
 
+// TODO ether class description or nothing, setup is already within the readme
 /*SET UP
 
-* 1) Docker installieren: https://www.docker.com/get-started
-* 2) docker-compose up -d im Directory install aufrufen
-*
-* */
+ * 1) Docker installieren: https://www.docker.com/get-started
+ * 2) docker-compose up -d im Directory install aufrufen
+ *
+ * */
 
 public class Injection {
 
     public static void main(String[] args) {
 
-        Connection con=null;
+        Connection con = null;
         // Verbindung zum PostgreSQL Server herstellen
         // Hier bräuchten wir noch das Passwort, dass du bei der Caesarverschlüsselung herausgefunden hast :)
         try {
-            con=DriverManager.getConnection("jdbc:postgresql://localhost:5432/gepardec","postgres","GepaRd");
+            con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/gepardec", "postgres", "GepaRd");
             System.out.println("Connected to the PostgreSQL server successfully.");
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("Failed to connect!");
             System.out.println(e.getMessage());
         }
@@ -42,9 +43,9 @@ public class Injection {
                 String user = rsa.getString("username");
                 String word = rsa.getString("password");
                 String salary = rsa.getString("salary");
-                System.out.println(user + "  " + word+ "   "+salary);
+                System.out.println(user + "  " + word + "   " + salary);
             }
-        }catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
@@ -67,7 +68,7 @@ public class Injection {
                 String user = rs.getString("username");
                 String word = rs.getString("password");
                 String salary = rs.getString("salary");
-                System.out.println(user +"  "+word+ "   "+salary);
+                System.out.println(user + "  " + word + "   " + salary);
             }
             rs.close();
         } catch (Exception e) {

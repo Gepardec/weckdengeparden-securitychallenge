@@ -33,7 +33,7 @@
         String ausgabe = "";
         int index;
         int verschiebung;
-        ArrayList<String> ausgabeArray = new ArrayList<String>();
+        ArrayList<String> ausgabeArray = new ArrayList<>();
 
         for(int i = 0; i < 26; i++)
         {
