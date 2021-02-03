@@ -11,12 +11,13 @@
 
     class CaesarEntschluesseln {
 
-
+    // TODO ether all english or all german
     static String range = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
 
     public static void main(String[] args) {
 
+        // TODO also in comments no special german chars (e.g. umlaute)
         // Bitte hier dein Passwort, welches du bei der Reverse Engineering Challenge herausgefunden hast, einfügen.
         String code = ""; //TODO hier fehlt das Passwort aus der vorigen Aufgabe
         code = code.replaceAll("[0-9]","");
@@ -27,9 +28,11 @@
 
     public static String entschluesseln(String text)
     {
+        // TODO log message if code is null/empty
+
         String ausgabe = "";
-        int index = 0;
-        int verschiebung = 0;
+        int index;
+        int verschiebung;
         ArrayList<String> ausgabeArray = new ArrayList<String>();
 
         for(int i = 0; i < 26; i++)
