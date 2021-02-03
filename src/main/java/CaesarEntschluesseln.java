@@ -18,7 +18,7 @@
     public static void main(String[] args) {
 
         // Bitte hier dein Passwort, welches du bei der Reverse Engineering Challenge herausgefunden hast, einfügen.
-        String code = "";
+        String code = ""; //TODO hier fehlt das Passwort aus der vorigen Aufgabe
         code = code.replaceAll("[0-9]","");
 
         System.out.println("Alle möglichen Verschiebungen von " + code + ":\n");
