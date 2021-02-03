@@ -17,63 +17,62 @@
 
    public class PasswordValidator {
 
-    public static void main(String[] args) {
-        int min = 5;
-        int max = 10;
-        System.out.println("Passwort prüfen");
-        Scanner input = new Scanner(System.in);
-        String password = input.nextLine();
+       public static void main(String[] args) {
+           int min = 5;
+           int max = 10;
+           System.out.println("Passwort prüfen");
+           Scanner input = new Scanner(System.in);
+           String password = input.nextLine();
 
-        System.out.println("Your password: " + password);
+           System.out.println("Your password: " + password);
 
-        int length = password.length();
+           int length = password.length();
 
-        //Länge zwischen 5 und 10
+           //Länge zwischen 5 und 10
 
-        if(length < min || length > max){
+           if (length < min || length > max) {
 
-            System.out.println("not a valid password");
-        }
+               System.out.println("not a valid password");
+           }
 
-        char c;
-        //Anzahl Nummern und Spezialzeichen
-        int[] counter = {0,0};
+           char c;
+           //Anzahl Nummern und Spezialzeichen
+           int[] counter = {0, 0};
 
-        for(int i = 0; i < length; i++){
+           for (int i = 0; i < length; i++) {
 
-            c = password.charAt(i);
+               c = password.charAt(i);
 
-            if(Character.isWhitespace(c) == true){
+               if (Character.isWhitespace(c) == true) {
 
-                System.out.println("not a valid password");
-                System.exit(0);
-            }
+                   System.out.println("not a valid password");
+                   System.exit(0);
+               }
 
-            if(Character.isDigit(c) == true){
+               if (Character.isDigit(c) == true) {
 
-                counter[0]++;
-            }
+                   counter[0]++;
+               }
 
-            //ASCII
+               //ASCII
 
-            if((c >= 33 && c <= 47) || (c >= 58 && c <= 64) || (c >= 91 && c <= 96) || (c >= 123 && c <= 127)){
+               if ((c >= 33 && c <= 47) || (c >= 58 && c <= 64) || (c >= 91 && c <= 96) || (c >= 123 && c <= 127)) {
 
-                counter[1]++;
-            }
-        }
+                   counter[1]++;
+               }
+           }
 
-        //Min eine Nummer und einen Spezialcharakter
+           //Min eine Nummer und einen Spezialcharakter
 
-        if(counter[0] == 0 || counter[1] == 0){
+           if (counter[0] == 0 || counter[1] == 0) {
 
-            System.out.println("not a valid password");
+               System.out.println("not a valid password");
 
-        }else{
+           } else {
 
-            System.out.println("valid password");
-        }
-    }
+               System.out.println("valid password");
+           }
+       }
 
 
-
-}
+   }
