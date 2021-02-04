@@ -2,7 +2,7 @@
  *  SQL INJECTION
  *
  * Kannst du mithilfe einer SQL INJECTION alle Daten abfragen ohne die Zugangsdaten zu kennen? :)
- * Wir würden die Daten nämlich für den PasswortValidator brauchen.
+ * Wir wuerden die Daten naemlich für den PasswortValidator brauchen.
  *
  */
 
