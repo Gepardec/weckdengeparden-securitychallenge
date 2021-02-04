@@ -1,17 +1,17 @@
-   /*
-    * Wie du gesehen hast entsprechen die Passwörter in der Datenbank keinerlei Richtlinien.
-    * Kannst du uns helfen einen Validator zu schreiben der Passwörter auf folgende Eigenschaften prüft?
+   /**
+    * Wie du gesehen hast entsprechen die Passwoerter in der Datenbank keinerlei Richtlinien.
+    * Kannst du uns helfen einen Validator zu schreiben der Passwoerter auf folgende Eigenschaften prueft?
     *
-    * Minimale Länge: 5
-    * Maximale Länge: 10
-    * Enthält zumindest EINE Zahl
-    * Enthält zumindest EIN Sonderzeichen (&, +, @, $, #, %, etc.)
-    * Enthält KEINE Leerzeichen
+    * Minimale Laenge: 5
+    * Maximale Laenge: 10
+    * Enthaelt zumindest EINE Zahl
+    * Enthaelt zumindest EIN Sonderzeichen (&, +, @, $, #, %, etc.)
+    * Enthaelt KEINE Leerzeichen
     *
     * In der Datenbank liegt genau EIN Passwort, dass den Richtlinien entspricht.
     * Hast du es entdeckt? Sehr gut, denn dieses Passwort brauchst für deine letzte Challenge, den HashGenerator!
     *
-    * */
+    */
 
 public class PasswordValidator {
 
