@@ -1,11 +1,12 @@
+/**
+ *  SQL INJECTION
+ *
+ * Kannst du mithilfe einer SQL INJECTION alle Daten abfragen ohne die Zugangsdaten zu kennen? :)
+ * Wir würden die Daten nämlich für den PasswortValidator brauchen.
+ *
+ */
+
 import java.sql.*;
-
-/*SET UP
-
-* 1) Docker installieren: https://www.docker.com/get-started
-* 2) docker-compose up -d im Directory install aufrufen
-*
-* */
 
 public class Injection {
 
@@ -13,24 +14,19 @@ public class Injection {
 
         Connection con=null;
         // Verbindung zum PostgreSQL Server herstellen
-        // Hier bräuchten wir noch das Passwort, dass du bei der Caesarverschlüsselung herausgefunden hast :)
+        // Hier brauchen wir noch das Passwort, dass du bei der CaesarEncryption herausgefunden hast :)
         try {
             con=DriverManager.getConnection("jdbc:postgresql://localhost:5432/gepardec","postgres","");
-            System.out.println("Connected to the PostgreSQL server successfully.");
+            System.out.println("Erfolgreich mit dem PostgreSQL Server verbunden!");
         }catch (Exception e){
-            System.out.println("Failed to connect!");
+            System.out.println("Verbindungsversuch fehlgeschlagen!");
             System.out.println(e.getMessage());
         }
 
-        /*
-         * SQL INJECTION
-         *
-         * Kannst du mithilfe einer SQL INJECTION alle Daten abfragen ohne die Zugangsdaten zu kennen? :)
-         * Wir würden die Daten nämlich für den PasswortValidator brauchen.
-         *
-         * */
+        // Hier ist Platz fuer deine Injection ;)
 
-        // So würde wohl ein korrekter Loginprozess ausschauen
+
+        // So wuerde wohl ein korrekter Loginprozess ausschauen
         String username = "Philipp";
         String password = "helloWorld";
         String query = "SELECT * FROM useraccess where username=? and password = ?";
