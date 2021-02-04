@@ -1,13 +1,13 @@
-/* Finde das Passwort dieser Challenge heraus.
- * Du kannst natürlich den Code nach belieben ändern.
+/** Finde das Passwort dieser Challenge heraus.
+ * Du kannst natuerlich den Code nach belieben aendern.
  * Bevor du mit der Challenge beginnst, musst du das Passwort der Website Challenge in die "passwd" Variable einfügen und den generierten Code in die "encoded" Variable.
- * */
+ */
 
 import java.util.Scanner;
 
 public class ReverseEngineering {
-    public static void main(String args[])
-    {
+
+    public static void main(String args[]) {
         String input;
         String passwd = "0x50n0x790x6a0x4170x6d9"; //Bitte hier das Passwort der Website einfügen und das Programm ausführen.
 
@@ -17,20 +17,18 @@ public class ReverseEngineering {
         Scanner scanner = new Scanner(System.in);
         input = scanner.next();
 
-        if(inputCheck(input))
-        {
-            System.out.println("\nGlückwunsch das war das korrekte Passwort ;)");
-            System.out.println("Du hast diese Challenge geschafft.\nDas Passwort benötigst du für die Caesar Entschlüsselung");
-        }else
-        {
+        if ( inputCheck(input) ) {
+            System.out.println("\nGlueckwunsch das war das korrekte Passwort ;)");
+            System.out.println("Du hast diese Challenge geschafft.\nDas Passwort benoetigst du fuer die CaesarEncryption");
+        } else {
             System.out.println("Das Passwort war nicht korrekt.");
         }
     }
 
-    public static boolean inputCheck(String input)
-    {
+    public static boolean inputCheck(String input) {
         byte[] encoded = {
-                // Füge hier das konvertierte Passwort von der Konsolenausgabe ein.
+                0x50, 'n', 0x79, 0x6a, 0x41, '7', 0x6d, '9'
+                // Fuege hier das konvertierte Passwort von der Konsolenausgabe ein.
                 // (Achtung bitte exakt eingeben, auch die Hochkomma und die Beistriche)
         };
 

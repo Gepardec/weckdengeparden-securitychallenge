@@ -1,17 +1,17 @@
-   /*
-    * Wie du gesehen hast entsprechen die Passwörter in der Datenbank keinerlei Richtlinien.
-    * Kannst du uns helfen einen Validator zu schreiben der Passwörter auf folgende Eigenschaften prüft?
-    *
-    * Minimale Länge: 5
-    * Maximale Länge: 10
-    * Enthält zumindest EINE Zahl
-    * Enthält zumindest EIN Sonderzeichen (&, +, @, $, #, %, etc.)
-    * Enthält KEINE Leerzeichen
-    *
-    * In der Datenbank liegt genau EIN Passwort, dass den Richtlinien entspricht.
-    * Hast du es entdeckt? Sehr gut, denn dieses Passwort brauchst für deine letzte Challenge, den HashGenerator!
-    *
-    * */
+/**
+ * Wie du gesehen hast entsprechen die Passwoerter in der Datenbank keinerlei Richtlinien.
+ * Kannst du uns helfen einen Validator zu schreiben der Passwoerter auf folgende Eigenschaften prueft?
+ *
+ * Minimale Laenge: 5
+ * Maximale Laenge: 10
+ * Enthaelt zumindest EINE Zahl
+ * Enthaelt zumindest EIN Sonderzeichen (&, +, @, $, #, %, etc.)
+ * Enthaelt KEINE Leerzeichen
+ *
+ * In der Datenbank liegt genau EIN Passwort, dass den Richtlinien entspricht.
+ * Hast du es entdeckt? Sehr gut, denn dieses Passwort brauchst für deine letzte Challenge, den HashGenerator!
+ *
+ */
 
    import java.util.Scanner;
 
@@ -20,7 +20,7 @@
        public static void main(String[] args) {
            int min = 5;
            int max = 10;
-           System.out.println("Passwort prüfen");
+           System.out.println("Passwort pruefen:");
            Scanner input = new Scanner(System.in);
            String password = input.nextLine();
 
@@ -28,11 +28,11 @@
 
            int length = password.length();
 
-           //Länge zwischen 5 und 10
+           //Laenge zwischen 5 und 10
 
            if (length < min || length > max) {
 
-               System.out.println("not a valid password");
+               System.out.println("Kein gueltiges Passwort");
            }
 
            char c;
@@ -45,7 +45,7 @@
 
                if (Character.isWhitespace(c) == true) {
 
-                   System.out.println("not a valid password");
+                   System.out.println("Kein gueltiges Passwort");
                    System.exit(0);
                }
 
@@ -66,11 +66,11 @@
 
            if (counter[0] == 0 || counter[1] == 0) {
 
-               System.out.println("not a valid password");
+               System.out.println("Kein gueltiges Passwort");
 
            } else {
 
-               System.out.println("valid password");
+               System.out.println("Gueltiges Passwort");
            }
        }
 
