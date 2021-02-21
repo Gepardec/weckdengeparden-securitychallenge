@@ -1,3 +1,4 @@
+
 /**
  *  SQL INJECTION
  *
@@ -10,52 +11,58 @@ import java.sql.*;
 
 public class Injection {
 
-    public static void main(String[] args) {
+	private static Connection getCon() throws SQLException {
+		// Verbindung zum PostgreSQL Server herstellen
+		// Hier brauchen wir noch das Passwort, dass du bei der CaesarEncryption herausgefunden hast :)
+		try {
+			//TODO connection reuse
+			return DriverManager.getConnection("jdbc:postgresql://localhost:5432/gepardec", "postgres", "GepaRd");
+		} catch (final SQLException e) {
+			System.out.println("Verbindungsversuch fehlgeschlagen!");
+			//System.out.println(e.getMessage());
+			throw e;
+		}
+	}
 
-        Connection con=null;
-        // Verbindung zum PostgreSQL Server herstellen
-        // Hier brauchen wir noch das Passwort, dass du bei der CaesarEncryption herausgefunden hast :)
-        try {
-            con=DriverManager.getConnection("jdbc:postgresql://localhost:5432/gepardec","postgres","");
-            System.out.println("Erfolgreich mit dem PostgreSQL Server verbunden!");
-        }catch (Exception e){
-            System.out.println("Verbindungsversuch fehlgeschlagen!");
-            System.out.println(e.getMessage());
-        }
+	public static int safeLogin(final String username, final String password) throws SQLException {
+		try (final Connection con = getCon()) {
+			final String query = "SELECT * FROM useraccess where username=? and password = ?";
+			final PreparedStatement stmt = con.prepareStatement(query);
+			stmt.setString(1, username);
+			stmt.setString(2, password);
 
-        // Hier ist Platz fuer deine Injection ;)
+			return printAndCloseResultSet(stmt.executeQuery());
+		}
+	}
 
+	public static int vulnerableLogin(final String username, final String password) throws SQLException {
+		try (final Connection con = getCon()) {
+			final String query = String.format("SELECT * FROM useraccess where username='%s' and password='%s'", username, password);
+			//Prepared Statement means I'm safe, right?
+			final ResultSet rs = con.prepareStatement(query).executeQuery();
+			return printAndCloseResultSet(rs);
+		}
+	}
 
-        // So wuerde wohl ein korrekter Loginprozess ausschauen
-        String username = "Philipp";
-        String password = "helloWorld";
-        String query = "SELECT * FROM useraccess where username=? and password = ?";
+	private static int printAndCloseResultSet(final ResultSet rs) throws SQLException {
+		int count = 0;
 
-        PreparedStatement stmt = null;
+		while (rs.next()) {
+			count++;
+			final String user = rs.getString("username");
+			final String word = rs.getString("password");
+			final int salary = rs.getInt("salary");
+			System.out.printf("%2d. %20s has password %20s (%s) and earns %5d.\n", count, user, "'" + word + "'", (PasswordValidator.passwordIsValid(word) ? "  valid" : "invalid"), salary);
+		}
+		rs.close();
+		return count;
+	}
 
-        try {
-            stmt = con.prepareStatement(query);
-            stmt.setString(1, username);
-            stmt.setString(2, password);
-
-            ResultSet rs = stmt.executeQuery();
-            System.out.println("Login erfolgreich!");
-
-            while (rs.next()) {
-                String user = rs.getString("username");
-                String word = rs.getString("password");
-                String salary = rs.getString("salary");
-                System.out.println(user +"  "+word+ "   "+salary);
-            }
-            rs.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                stmt.close();
-                con.close();
-            } catch (Exception e) {
-            }
-        }
-    }
+	public static void main(final String[] args) throws SQLException {
+		System.out.println("Normal login");
+		vulnerableLogin("Philipp", "helloWorld");
+		System.out.println("-------------------------------------------------------------------------------------------");
+		System.out.println("SQL Injection");
+		vulnerableLogin("anything really", "' OR 1=1--");
+	}
 }
