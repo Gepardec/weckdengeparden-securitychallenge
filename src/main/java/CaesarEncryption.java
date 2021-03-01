@@ -17,7 +17,7 @@
     public static void main(String[] args) {
 
         // Bitte hier dein Passwort, welches du bei der Reverse Engineering Challenge herausgefunden hast, einfuegen.
-        String code = "";
+        String code = "PnyjA7m9";
         code = code.replaceAll("[0-9]","");
 
         System.out.println("Alle moeglichen Verschiebungen von " + code + ":\n");
@@ -26,8 +26,24 @@
 
     public static String decrypt(String input)
     {
-        String solution = input +  "      WHAAAAAT? bitte uebersetzen!!";
-        System.out.println(solution);
+        String solution = "";
+
+        for (int i=1; i <= 26; i++) {
+          solution = caesarShift(input, i);
+          System.out.println(solution);
+        }
+
+
         return solution;
+    }
+
+    public static String caesarShift(String input, int shift)
+    {
+      String output = "";
+      for (int i=0; i < input.length(); i++) {
+        int new_index = (range.indexOf(input.charAt(i)) - shift + range.length()) % range.length();
+        output += range.charAt(new_index);
+      }
+      return output;
     }
 }

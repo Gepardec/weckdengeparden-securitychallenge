@@ -16,7 +16,7 @@ public class Injection {
         // Verbindung zum PostgreSQL Server herstellen
         // Hier brauchen wir noch das Passwort, dass du bei der CaesarEncryption herausgefunden hast :)
         try {
-            con=DriverManager.getConnection("jdbc:postgresql://localhost:5432/gepardec","postgres","");
+            con=DriverManager.getConnection("jdbc:postgresql://localhost:5432/gepardec","postgres","GepaRd");
             System.out.println("Erfolgreich mit dem PostgreSQL Server verbunden!");
         }catch (Exception e){
             System.out.println("Verbindungsversuch fehlgeschlagen!");
@@ -24,7 +24,27 @@ public class Injection {
         }
 
         // Hier ist Platz fuer deine Injection ;)
+        try {
+            String username = "Philipp";
+            String password = "helloWorld";
+            PreparedStatement stmt = null;
+            stmt = con.prepareStatement("SELECT * FROM useraccess where username=? and password = ? OR 1=1--");
+            stmt.setString(1, username);
+            stmt.setString(2, password);
 
+            ResultSet rs = stmt.executeQuery();
+            System.out.println("Injection erfolgreich!");
+
+            while (rs.next()) {
+                String user = rs.getString("username");
+                String word = rs.getString("password");
+                String salary = rs.getString("salary");
+                System.out.println(user +"  "+word+ "   "+salary);
+            }
+            rs.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         // So wuerde wohl ein korrekter Loginprozess ausschauen
         String username = "Philipp";

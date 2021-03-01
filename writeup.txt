@@ -1,0 +1,46 @@
+# Challenge Writeup
+## Challenge 1
+0 - 4 : 0x50
+4 - 5 : n
+5 - 9 : 0x79
+9 - 13: 0x6a
+13- 17: 0x41
+17- 18: 7
+18-22 : 0x6d
+22- 23: 9
+0x50n0x790x6a0x4170x6d9
+
+## Challenge 2
+Hex to ASCII:
+PnyjA7m9
+
+## Challenge 3
+Ceasar shift:
++17 - gEPARD
+-9 - Gepard
+
+## Challenge 4
+Password not correct. Docker file says GepaRd.
+Injection of prepared statement not really possible.
+Just inserted db mining query above
+
+Injection erfolgreich!
+Philipp  helloWorld   2400
+Fabian  W#2FfkaeiE   3234
+Matthias  password   1244
+Christoph  TestTest1   20248
+Agnes  safePassword   1241
+Stefan  dockerContainer   3213
+Nebojsa  java4life   5435
+Michael  3JdweKK   7547
+Andrea  3hello33   2334
+Andreas  invalid353   1232
+Michaela  dts4l   2343
+Franz  fdjiefJJ   5453
+
+## Challenge 5
+all in one regex 
+W#2FfkaeiE
+
+## Challenge 6
+
