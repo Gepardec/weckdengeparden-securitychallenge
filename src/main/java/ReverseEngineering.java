@@ -9,9 +9,9 @@ public class ReverseEngineering {
 
     public static void main(String args[]) {
         String input;
-        String passwd = ""; //Bitte hier das Passwort der Website einfuegen und das Programm ausfuehren.
+        String passwd = "0x50n0x790x6a0x4170x6d9"; //Bitte hier das Passwort der Website einfuegen und das Programm ausfuehren.
 
-        System.out.println("Bitte kopiere folgenden Code in die Klammern der encoded Variable, dann kannst du auch schon loslegen:\n"+passwd.substring(0,4)+", '"+passwd.substring(4,5)+"', "+passwd.substring(5,9)+", "+passwd.substring(9,13)+", "+passwd.substring(13,17)+", '"+passwd.substring(17,18)+"', "+passwd.substring(18,22)+", '"+passwd.substring(22,23)+"'");
+        System.out.println("Bitte kopiere folgenden Code in die Klammern der encoded Variable, dann kannst du auch schon loslegen:\n"+getByteString(passwd));
         System.out.println("Password:");
         Scanner scanner = new Scanner(System.in);
         input = scanner.next();
@@ -24,11 +24,18 @@ public class ReverseEngineering {
         }
     }
 
+    // In eigene Methode verschoben, um vom Solver auch darauf zugreifen zu können
+    public static String getByteString(String passwd) {
+        return passwd.substring(0,4)+", '"+passwd.substring(4,5)+"', "+passwd.substring(5,9)+", "+passwd.substring(9,13)+", "+passwd.substring(13,17)+", '"+passwd.substring(17,18)+"', "+passwd.substring(18,22)+", '"+passwd.substring(22,23)+"'";
+    }
+
     public static boolean inputCheck(String input) {
         byte[] encoded = {
                 // Fuege hier das konvertierte Passwort von der Konsolenausgabe ein.
                 // (Achtung bitte exakt eingeben, auch die Hochkomma und die Beistriche)
+                0x50, 'n', 0x79, 0x6a, 0x41, '7', 0x6d, '9'
         };
+        System.out.println(new String(encoded)); // PnyjA7m9
 
         for (int i=0; i<encoded.length; i++) {
             if (input.getBytes()[i] != encoded[i]) {
