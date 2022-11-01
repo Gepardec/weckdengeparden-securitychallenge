@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="weckdengeparden-securitychallenge" target="1.8" />
+      <module name="weckdengeparden-securitychallenge" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>

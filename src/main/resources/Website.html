@@ -6,28 +6,36 @@
 <body>
 <form>
     <label for="pswd">Enter your password: </label>
-	<input type="password" id="pswd"/>
-	<input type="submit" value="login" onclick="checkPswd(); return false;" />
+    <input type="password" id="pswd"/>
+    <input type="submit" value="login" onclick="checkPswd(); return false;"/>
 </form>
 
 <script type="text/javascript">
   function checkPswd() {
     var passw = document.getElementById("pswd").value;
+    var step = 0;
 	
     if (passw.substring(0, 4) == '0x50')
 	{
+	    alert('step: ' + ++step + ': 0x50');
 		if (passw.substring(2*9, 4*5+2) == '0x6d')
-		{	
+		{
+		alert('step: ' + ++step + ' 0x6d');
 			if (passw.substring(4, 4+1) == 'n')
 			{
+	        alert('step: ' + ++step + ': n');
 				if (passw.substring(4*3+1, 4*4+1) == '0x41')
 				{
-					if (passw.substring(9, 4*3+1) == '0x6a') 
+				alert('step: ' + ++step + ': 0x41');
+					if (passw.substring(9, 4*3+1) == '0x6a')
 					{
+					alert('step: ' + ++step + ': 0x6a');
 						if (passw.substring(4*4+1, 2*9) == '7')
 						{
+						alert('step: ' + ++step + ': 7');
 							if (passw.substring(4+1, 9) == '0x79')
 							{
+							alert('step: ' + ++step + ': 0x79');
 								if (passw.substring(4*5+2, 4*5+3) == '9')
 								{
 									alert("Glückwunsch! Das ist das korrekte Passwort ;)\nDu hast diese Challenge geschafft.\nDas Passwort benötigst du für die \"Reverse Engineering\" Challenge.\nPasswort: "+passw)
@@ -43,8 +51,9 @@
 	{
       alert("Falsches Passwort :(");
     }
-    
+
   }
+
 </script>
 </body>
 </html>
