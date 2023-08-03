@@ -14,4 +14,4 @@ services:
       POSTGRES_PASSWORD: GepaRd
       POSTGRES_DB: gepardec
     ports: #make db accessible locally
-      - "5432:5432"
+      - "5433:5432"
